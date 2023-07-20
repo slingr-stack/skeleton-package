@@ -1,23 +1,3 @@
-<table>
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Last Updated</th>
-        <th>Summary</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Skeleton package</td>
-        <td>July 20, 2023</td>
-        <td>Detailed description of the API of the Skeleton package.</td>
-    </tr>
-    </tbody>
-</table>
-# Overview
-
-
-
 # Javascript API
 
 The Javascript API of the skeleton endpoint has three pieces:
@@ -80,10 +60,10 @@ pkg.skeleton.functions.path4.delete()
 ---
 
 </details>
-
+    
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint: 
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -269,17 +249,3 @@ Description of Custom Flow Steps
 
 ## Additional Helpers
 *MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*
-
-## Dependencies
-* HTTP Service (Latest Version)
-* Oauth Package (v1.0.1)
-
-## About SLINGR
-
-SLINGR is a low-code rapid application development platform that accelerates development, with robust architecture for integrations and executing custom workflows and automation.
-
-[More info about SLINGR](https://slingr.io)
-
-## License
-
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.

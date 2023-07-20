@@ -1,0 +1,90 @@
+{
+    "name": "skeleton",
+    "label": "Skeleton Package",
+    "dependencies": [
+        {
+            "type": "service",
+            "name": "http",
+            "version": "v1.2.6",
+            "instanceId": "shared"
+        },
+        {
+            "type": "package",
+            "name": "oauth",
+            "version": "v1.0.1"
+        }
+    ],
+    "configuration": [
+        {
+            "name": "choice",
+            "label": "Choice",
+            "required": false,
+            "defaultValue": "true",
+            "type": "buttonsGroup",
+            "typeOptions": {
+                "allowCustom": false,
+                "possibleValues": [
+                    {
+                        "label": "True",
+                        "name": "true"
+                    },
+                    {
+                        "label": "False",
+                        "name": "false"
+                    },
+                    {
+                        "label": "Other",
+                        "name": "other"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Text",
+            "label": "text",
+            "type": "text",
+            "required": "false",
+            "visibility": "config.choice == 'true'"
+        },
+        {
+            "name": "info",
+            "label": "info",
+            "type": "label",
+            "value": "'info'"
+        }
+    ],
+    "events": [
+        {
+            "label": "Webhook",
+            "name": "webhook",
+            "description": "Event triggered when there is a webhook coming from PandaDoc."
+        },
+        {
+            "label": "Callback",
+            "name": "callback",
+            "description": "Happens when a async process is finished"
+        }
+    ],
+    "metadata": [
+        {
+            "type": "script",
+            "namespace": "api",
+            "path": "/scripts/functions.js"
+        },
+        {
+            "type": "listener",
+            "namespace": "webhook",
+            "path": "/listeners/listeners.js"
+        },
+        {
+            "type": "flowStep",
+            "namespace": "steps",
+            "path": "/flowSteps/customFlow"
+        },
+        {
+            "type": "uiService",
+            "namespace": "uiServices",
+            "path": "/uiServices/testUiService"
+        }
+    ]
+}
