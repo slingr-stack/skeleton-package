@@ -1,0 +1,39 @@
+{
+	"fileName": "functions",
+	"endpointName": "skeleton",
+	"apiDescriptors": [
+		{
+			"prefix": "",
+			"suffix": "",
+			"method": "GET",
+			"url": "/testPath"
+		},
+		{
+			"prefix": "",
+			"suffix": "",
+			"method": "PUT",
+			"url": "/path1/:testPath"
+		},
+		{
+			"prefix": "",
+			"suffix": "",
+			"method": "PATCH",
+			"url": "/path2",
+			"queryParams": ["param2", "param3"]
+		},
+		{
+			"prefix": "",
+			"suffix": "",
+			"method": "GET",
+			"url": "/path3",
+			"acceptsCallbacks": true
+		},
+		{
+			"prefix": "",
+			"suffix": "",
+			"method": "DELETE",
+			"url": "/path4",
+			"injectedHelper": true
+		}
+	]
+}
