@@ -65,52 +65,6 @@ exports.removeAccessToken = function () {
     return dependencies.oauth.functions.disconnectUser('skeleton:disconnectUser');
 }
 
-// TODO Do NOT use helpers unless strictly necessary (delete all this helpers if you not use them)
-
-/****************************************************
- Helpers
- ****************************************************/
-
-exports.testPath = {};
-
-exports.path1 = {};
-
-exports.path2 = {};
-
-exports.path3 = {};
-
-exports.testPath.get = function(httpOptions) {
-    let url = parse('/testPath');
-    sys.logs.debug('[skeleton] GET from: ' + url);
-    let options = checkHttpOptions(url, httpOptions);
-    return httpService.get(Skeleton(options));
-};
-
-exports.path1.put = function(testPath, httpOptions) {
-    if (!testPath) {
-        sys.logs.error('Invalid argument received. This helper should receive the following parameters as non-empty strings: [testPath].');
-        return;
-    }
-    let url = parse('/path1/:testPath', [testPath]);
-    sys.logs.debug('[skeleton] PUT from: ' + url);
-    let options = checkHttpOptions(url, httpOptions);
-    return httpService.put(Skeleton(options));
-};
-
-exports.path2.patch = function(httpOptions) {
-    let url = parse('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '');
-    sys.logs.debug('[skeleton] PATCH from: ' + url);
-    let options = checkHttpOptions(url, httpOptions);
-    return httpService.patch(Skeleton(options));
-};
-
-exports.path3.get = function(httpOptions, callbackData, callbacks) {
-    let url = parse('/path3');
-    sys.logs.debug('[skeleton] GET from: ' + url);
-    let options = checkHttpOptions(url, httpOptions);
-    return httpService.get(Skeleton(options), callbackData, callbacks);
-};
-
 /****************************************************
  Public API - Generic Functions
  ****************************************************/
