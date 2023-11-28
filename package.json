@@ -5,16 +5,23 @@
         {
             "type": "service",
             "name": "http",
-            "version": "v1.2.6",
+            "version": "v1.3.7",
             "instanceId": "shared"
         },
         {
             "type": "package",
             "name": "oauth",
-            "version": "v1.0.1"
+            "version": "v1.0.19"
         }
     ],
+    "configurationBuilder": "/configurationBuilder.js",
     "configuration": [
+        {
+            "name": "SKELETON_API_BASE_URL",
+            "label": "Skeleton Api Url",
+            "type": "label",
+            "value": "https://example.com/"
+        },
         {
             "name": "choice",
             "label": "Choice",
@@ -22,7 +29,7 @@
             "defaultValue": "true",
             "type": "buttonsGroup",
             "typeOptions": {
-                "allowCustom": false,
+                "allowCustom": true,
                 "possibleValues": [
                     {
                         "label": "True",
@@ -40,8 +47,8 @@
             }
         },
         {
-            "name": "Text",
-            "label": "text",
+            "name": "text",
+            "label": "Text",
             "type": "text",
             "required": "false",
             "visibility": "config.choice == 'true'"
@@ -69,21 +76,26 @@
         {
             "type": "script",
             "namespace": "api",
-            "path": "/scripts/functions.js"
+            "path": "/scripts/api.js"
         },
         {
             "type": "listener",
             "namespace": "webhook",
-            "path": "/listeners/listeners.js"
+            "path": "/listeners/webhook.js"
         },
         {
             "type": "flowStep",
-            "namespace": "steps",
+            "namespace": "apiCallSkeleton",
+            "path": "/flowSteps/apiCallSkeleton"
+        },
+        {
+            "type": "flowStep",
+            "namespace": "customFlow",
             "path": "/flowSteps/customFlow"
         },
         {
             "type": "uiService",
-            "namespace": "uiServices",
+            "namespace": "testUiService",
             "path": "/uiServices/testUiService"
         }
     ]
