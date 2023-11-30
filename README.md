@@ -1,4 +1,4 @@
-<table>
+<table class="table" style="margin-top: 10px">
     <thead>
     <tr>
         <th>Title</th>
@@ -9,77 +9,34 @@
     <tbody>
     <tr>
         <td>Skeleton package</td>
-        <td>July 20, 2023</td>
+        <td>November 28, 2023</td>
         <td>Detailed description of the API of the Skeleton package.</td>
     </tr>
     </tbody>
 </table>
+
 # Overview
-
-
 
 # Javascript API
 
-The Javascript API of the skeleton endpoint has three pieces:
+The Javascript API of the skeleton endpoint has two pieces:
 
-- **HTTP requests**: These allow making regular HTTP requests.
-- **Shortcuts**: These are helpers to make HTTP request to the API in a more convenient way.
-- **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
+- **HTTP requests**
+- **Flow steps**
 
 ## HTTP requests
 You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [skeleton API](API_URL_HERE) like this:
 ```javascript
-var response = pkg.skeleton.functions.get('/path3')
-var response = pkg.skeleton.functions.put('/path1/:testPath', body)
-var response = pkg.skeleton.functions.put('/path1/:testPath')
-var response = pkg.skeleton.functions.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '', body)
-var response = pkg.skeleton.functions.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '')
-var response = pkg.skeleton.functions.delete('/path4')
+var response = pkg.skeleton.api.get('/path3')
+var response = pkg.skeleton.api.put('/path1/:testPath', body)
+var response = pkg.skeleton.api.put('/path1/:testPath')
+var response = pkg.skeleton.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '', body)
+var response = pkg.skeleton.api.patch('/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '')
+var response = pkg.skeleton.api.delete('/path4')
 ```
 
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
 for more information about generic requests.
-
-## Shortcuts
-
-Instead of having to use the generic HTTP methods, you can (and should) make use of the helpers provided in the endpoint:
-<details>
-    <summary>Click here to see all the helpers</summary>
-
-<br>
-
-* API URL: '/testPath'
-* HTTP Method: 'GET'
-```javascript
-pkg.skeleton.functions.testPath.get()
-```
----
-* API URL: '/path3'
-* HTTP Method: 'GET'
-```javascript
-pkg.skeleton.functions.path3.get(, callbackData, callbacks)
-```
----
-* API URL: '/path1/:testPath'
-* HTTP Method: 'PUT'
-```javascript
-pkg.skeleton.functions.path1.put(testPath, body)
-```
----
-* API URL: '/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + ''
-* HTTP Method: 'PATCH'
-```javascript
-pkg.skeleton.functions.path2.patch(body)
-```
----
-* API URL: '/path4'
-* HTTP Method: 'DELETE'
-```javascript
-pkg.skeleton.functions.path4.delete()
-```
----
-
-</details>
 
 ## Flow Step
 
@@ -88,8 +45,6 @@ As an alternative option to using scripts, you can make use of Flows and Flow St
     <summary>Click here to see the Flow Steps</summary>
 
 <br>
-
-
 
 ### Generic Flow Step
 
@@ -177,7 +132,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> false </td>
         <td> overrideSettings </td>
-        <td>Indicates that the resource has to be downloaded into a file instead of returning it in the response.</td>
+        <td>It Indicates that the resource has to be downloaded into a file instead of returning it in the response.</td>
     </tr>
     <tr>
         <td>Download</td>
@@ -185,7 +140,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> false </td>
         <td> overrideSettings </td>
-        <td>If true the method won't return until the file has been downloaded, and it will return all the information of the file.</td>
+        <td>If true, the method won't return until the file has been downloaded, and it will return all the information of the file.</td>
     </tr>
     <tr>
         <td>File name</td>
@@ -193,7 +148,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td></td>
         <td> overrideSettings </td>
-        <td>If provided, the file will be stored with this name. If empty the file name will be calculated from the URL.</td>
+        <td>If provided, the file will be stored with this name. If empty, the file name will be calculated from the URL.</td>
     </tr>
     <tr>
         <td>Full response</td>
@@ -201,7 +156,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> false </td>
         <td> overrideSettings </td>
-        <td>Include extended information about response</td>
+        <td>Includes extended information about response</td>
     </tr>
     <tr>
         <td>Connection Timeout</td>
@@ -209,7 +164,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> 5000 </td>
         <td> overrideSettings </td>
-        <td>Connect a timeout interval, in milliseconds (0 = infinity).</td>
+        <td>Connect a timeout interval in milliseconds (0 = infinity).</td>
     </tr>
     <tr>
         <td>Read Timeout</td>
@@ -217,7 +172,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> 60000 </td>
         <td> overrideSettings </td>
-        <td>Read a timeout interval, in milliseconds (0 = infinity).</td>
+        <td>Read a timeout interval in milliseconds (0 = infinity).</td>
     </tr>
     </tbody>
 </table>
@@ -248,31 +203,9 @@ Generic flow step for full use of the entire endpoint and its services.
 
 For more information about how shortcuts or flow steps work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
-## Additional Flow Step
-
-
-<details>
-    <summary>Click here to see the Customs Flow Steps</summary>
-
-<br>
-
-
-
-### Custom Flow Steps Name
-
-Description of Custom Flow Steps
-
-*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
-
-
-</details>
-
-## Additional Helpers
-*MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*
-
 ## Dependencies
 * HTTP Service (Latest Version)
-* Oauth Package (v1.0.1)
+* Oauth Package (v1.0.19) // TODO review and remove if its needed
 
 ## About SLINGR
 
