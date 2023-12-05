@@ -57,7 +57,7 @@ The Javascript API of the dendi lis package has two pieces:
 - **Flow steps**
 
 ## HTTP requests
-You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [skeleton API](API_URL_HERE) like this:
+You can make `GET`,`PUT`,`PATCH`,`DELETE` requests to the [Dendi LIS API] like this:
 ```javascript
 var response = pkg.dendi.api.get('/patients')
 var response = pkg.dendi.api.put('/patients/' + patientId, {"birth_date": "1980-01-05"});
