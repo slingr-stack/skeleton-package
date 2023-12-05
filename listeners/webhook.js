@@ -14,10 +14,7 @@ listeners.defaultWebhookDendi = {
     },
     callback: function(event) {
         sys.logs.info('Received Dendi webhook. Processing and triggering a package event.');
-        var body = event.data.body;
-        var params = event.data.parameters;
         var headers = event.data.headers;
-
         var body = JSON.stringify(event.data.body);
         var params = event.data.parameters;
 
