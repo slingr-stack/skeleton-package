@@ -2,23 +2,28 @@
  Listeners
  ****************************************************/
 
-listeners.defaultWebhookSkeleton = {
-    label: 'Catch HTTP skeleton events',
+listeners.defaultWebhookDendi = {
+    label: 'Catch HTTP dendi events',
     type: 'service',
     options: {
         service: 'http',
         event: 'webhook',
         matching: {
-            path: '/skeleton',
+            path: '/dendi/orders',
         }
     },
     callback: function(event) {
-        sys.logs.info('Received Skeleton webhook. Processing and triggering a package event.');
+        sys.logs.info('Received Dendi webhook. Processing and triggering a package event.');
+        var body = event.data.body;
+        var params = event.data.parameters;
+        var headers = event.data.headers;
+
         var body = JSON.stringify(event.data.body);
         var params = event.data.parameters;
-        if(true) {
+
+        if(headers['authorization'] === pkg.dendi.api.utils.getConfiguration("webhooksToken")) {
             sys.logs.info('Valid webhook received. Triggering event.');
-            sys.events.triggerEvent('skeleton:webhook', {
+            sys.events.triggerEvent('dendi:webhook', {
                 body: body,
                 params: params
             });
