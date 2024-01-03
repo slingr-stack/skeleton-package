@@ -9,7 +9,7 @@
     <tbody>
     <tr>
         <td>Skeleton package</td>
-        <td>November 28, 2023</td>
+        <td>January 3, 2024</td>
         <td>Detailed description of the API of the Skeleton package.</td>
     </tr>
     </tbody>
@@ -19,7 +19,7 @@
 
 # Javascript API
 
-The Javascript API of the skeleton endpoint has two pieces:
+The Javascript API of the skeleton package has two pieces:
 
 - **HTTP requests**
 - **Flow steps**
@@ -40,7 +40,7 @@ for more information about generic requests.
 
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the package:
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -48,7 +48,7 @@ As an alternative option to using scripts, you can make use of Flows and Flow St
 
 ### Generic Flow Step
 
-Generic flow step for full use of the entire endpoint and its services.
+Generic flow step for full use of the entire package and its services.
 
 <h3>Inputs</h3>
 
@@ -71,7 +71,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td> - </td>
         <td>Always</td>
         <td>
-            This is the http method to be used against the endpoint. <br>
+            This is the http method to be used against the package. <br>
             Possible values are: <br>
             <i><strong>GET,PUT,PATCH,DELETE</strong></i>
         </td>
@@ -83,7 +83,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td> - </td>
         <td>Always</td>
         <td>
-            The url to which this endpoint will send the request. This is the exact service to which the http request will be made. <br>
+            The url to which this package will send the request. This is the exact service to which the http request will be made. <br>
             Possible values are: <br>
             <i><strong>/testPath<br>/path3<br>/path1/{testPath}<br>/path2?param2=' + httpOptions.query.param2 + '&param3=' + httpOptions.query.param3 + '<br>/path4<br></strong></i>
         </td>
@@ -192,7 +192,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>response</td>
         <td>object</td>
         <td>
-            Object resulting from the response to the endpoint call.
+            Object resulting from the response to the package call.
         </td>
     </tr>
     </tbody>
@@ -204,7 +204,7 @@ Generic flow step for full use of the entire endpoint and its services.
 For more information about how shortcuts or flow steps work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
 ## Dependencies
-* HTTP Service (Latest Version)
+* HTTP Service (v1.3.7)
 * Oauth Package (v1.0.19) // TODO review and remove if its needed
 
 ## About SLINGR
@@ -215,4 +215,4 @@ SLINGR is a low-code rapid application development platform that accelerates dev
 
 ## License
 
-This endpoint is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
+This package is licensed under the Apache License 2.0. See the `LICENSE` file for more details.

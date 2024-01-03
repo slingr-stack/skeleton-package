@@ -24,7 +24,7 @@ function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
     try {
         return requestFn(options, callbackData, callbacks);
     } catch (error) {
-        sys.logs.info("[skeleton] Handling request..."+ JSON.stringify(error));
+        sys.logs.info("[skeleton] Handling request...: "+ JSON.stringify(error));
         // TODO : If you use oauth uncomment this, otherwise delete this comment
         /*
         dependencies.oauth.functions.refreshToken('skeleton:refreshToken');
