@@ -21,16 +21,17 @@ let httpService = {};
  * Handles a request with retry from the platform side.
  */
 function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
+    return requestFn(options, callbackData, callbacks);
+    // TODO : If you use oauth uncomment this and delete the previous line, otherwise delete this comment
+    /*
     try {
         return requestFn(options, callbackData, callbacks);
     } catch (error) {
         sys.logs.info("[skeleton] Handling request...: "+ JSON.stringify(error));
-        // TODO : If you use oauth uncomment this, otherwise delete this comment
-        /*
         dependencies.oauth.functions.refreshToken('skeleton:refreshToken');
         return requestFn(setAuthorization(options), callbackData, callbacks);
-        */
     }
+    */
 }
 
 function createWrapperFunction(requestFn) {
