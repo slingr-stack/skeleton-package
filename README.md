@@ -204,8 +204,8 @@ Generic flow step for full use of the entire package and its services.
 For more information about how shortcuts or flow steps work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
 ## Dependencies
-* HTTP Service (v1.3.7)
-* Oauth Package (v1.0.19) // TODO review and remove if its needed
+* HTTP Service (v1.6.2)
+* Oauth Package (v1.0.24) // TODO review and remove if its needed
 
 ## About SLINGR
 
