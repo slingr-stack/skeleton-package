@@ -289,6 +289,7 @@ let Skeleton = function (options) {
 
 function setApiUri(options) {
     let url = options.path || "";
+    const API_URL = config.get("SKELETON_API_BASE_URL")
     options.url = API_URL + url;
     sys.logs.debug('[skeleton] Set url: ' + options.path + "->" + options.url);
     return options;
