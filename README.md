@@ -209,7 +209,8 @@ For more information about how shortcuts or flow steps work, and how they are ge
 
 ## About SLINGR
 
-SLINGR is a low-code rapid application development platform that accelerates development, with robust architecture for integrations and executing custom workflows and automation.
+SLINGR is a low-code rapid application development platform that speeds up development,
+with robust architecture for integrations and executing custom workflows and automation.
 
 [More info about SLINGR](https://slingr.io)
 
