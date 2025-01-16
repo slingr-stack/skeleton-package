@@ -185,7 +185,7 @@
                         "label": "Email",
                         "name": "email",
                         "type": "text",
-                        "required": true,
+                        "required": false,
                         "typeOptions": {
                             "validation": "email"
                         }
@@ -194,7 +194,7 @@
                         "label": "Password",
                         "name": "password",
                         "type": "password",
-                        "required": true
+                        "required": false
                     },
                     {
                         "label": "Bool",
@@ -211,7 +211,7 @@
                         "label": "Script",
                         "name": "actionScript",
                         "type": "script",
-                        "required": true
+                        "required": false
                     },
                     {
                         "label": "Multi scripts",
@@ -265,7 +265,7 @@
                         "name": "customSwitcher",
                         "type": "buttonsGroup",
                         "multiplicity": "one",
-                        "required": true,
+                        "required": false,
                         "defaultValue": "${TEST1}",
                         "typeOptions": {
                             "allowCustom": true,
@@ -290,7 +290,7 @@
                         "name": "switcher",
                         "type": "buttonsGroup",
                         "multiplicity": "one",
-                        "required": true,
+                        "required": false,
                         "defaultValue": "warn",
                         "typeOptions": {
                             "allowCustom": true,
@@ -315,7 +315,7 @@
                         "name": "multiSwitcher",
                         "type": "buttonsGroup",
                         "multiplicity": "many",
-                        "required": true,
+                        "required": false,
                         "defaultValue": ["danger", "info"],
                         "typeOptions": {
                             "possibleValues":[
@@ -462,7 +462,7 @@
                                     "name": "zip",
                                     "type": "text",
                                     "defaultValue": "1234",
-                                    "required": true,
+                                    "required": false,
                                     "typeOptions": {
                                         "validation": "number"
                                     }
