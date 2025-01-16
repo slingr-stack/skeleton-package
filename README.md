@@ -1,21 +1,23 @@
-<table class="table" style="margin-top: 10px">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Last Updated</th>
-        <th>Summary</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Skeleton package</td>
-        <td>January 3, 2024</td>
-        <td>Detailed description of the API of the Skeleton package.</td>
-    </tr>
-    </tbody>
-</table>
 
 # Overview
+
+Repo: [https://github.com/slingr-stack/skeleton-package](https://github.com/slingr-stack/skeleton-package)
+
+This package is a skeleton for a new package.
+
+# Configuration
+
+## Client id
+
+**Name**: `clientId` **Type**: text **Mandatory**: true
+
+The client ID coming from the external service.
+
+## Client secret
+
+**Name**: `clientSecret` **Type**: text **Mandatory**: true
+
+The client secret coming from the external service.
 
 # Javascript API
 
@@ -38,7 +40,7 @@ var response = pkg.skeleton.api.delete('/path4')
 Please take a look at the documentation of the [HTTP service](https://github.com/slingr-stack/http-service)
 for more information about generic requests.
 
-## Flow Step
+## Flow step
 
 As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the package:
 <details>
@@ -46,7 +48,7 @@ As an alternative option to using scripts, you can make use of Flows and Flow St
 
 <br>
 
-### Generic Flow Step
+### Generic flow step
 
 Generic flow step for full use of the entire package and its services.
 
@@ -203,11 +205,19 @@ Generic flow step for full use of the entire package and its services.
 
 For more information about how shortcuts or flow steps work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
 
-## Dependencies
-* HTTP Service (v1.6.2)
-* Oauth Package (v1.0.24) // TODO review and remove if its needed
+## Events
 
-## About SLINGR
+### Webhook
+
+To receive webhooks from a external service, you should configure the `Webhook URL` in the external service application.
+
+Once everything is set up, you will receive events of type `Webhook` for the corresponding package. For more information about the events you can get from QuickBooks, please refer to the [webhooks' external service documentation](...).
+
+## Dependencies
+* HTTP Service
+* Oauth Package // TODO review and remove if its needed
+
+## About Slingr
 
 SLINGR is a low-code rapid application development platform that speeds up development,
 with robust architecture for integrations and executing custom workflows and automation.

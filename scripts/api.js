@@ -267,13 +267,14 @@ function mergeJSON (json1, json2) {
  ****************************************************/
 
 exports.callbackTest = function () {
-    log('test function arrived UI');
+    log('[skeleton] Test function arrived UI');
     sys.ui.sendMessage({
         scope: 'uiService:testUiService.testUiService',
         name: 'callbackTest',
         callbacks: {
             callbackTest: function (originalMessage, callbackData) {
-                sys.logs.info('callbackTest');
+                sys.logs.info('[skeleton] callbackTest');
+                sys.events.triggerEvent('skeleton:callback');
             }
         }
     });
