@@ -6,20 +6,15 @@
             "type": "service",
             "name": "http",
             "version": "v1.8.0"
-        },
-        {
-            "type": "package",
-            "name": "oauth",
-            "version": "v1.0.24"
         }
     ],
     "configurationBuilder": "/configurationBuilder.js",
     "configuration": [
         {
-            "name": "SKELETON_API_BASE_URL",
-            "label": "Skeleton Api Url",
+            "name": "label",
+            "label": "Label",
             "type": "label",
-            "value": "https://example.com/"
+            "value": "label"
         },
         {
             "name": "choice",
