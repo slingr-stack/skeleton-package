@@ -1,5 +1,5 @@
 {
-  "label": "API call to skeleton",
+  "label": "Custom Flow",
   "name": "customFlow",
   "category": "integrations",
   "description": "This flow step will send generic request to skeleton",
