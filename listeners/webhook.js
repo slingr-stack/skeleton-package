@@ -15,6 +15,7 @@ listeners.defaultWebhookSkeleton = {
     callback: function(event) {
         sys.logs.info('[skeleton] Received Skeleton webhook. Processing and triggering a package event.');
         sys.logs.info('[skeleton] Valid webhook received. Triggering event.');
+        // Trigger the package event
         sys.events.triggerEvent('skeleton:webhook', event.data);
     }
 };
