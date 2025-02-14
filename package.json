@@ -1,12 +1,11 @@
 {
     "name": "skeleton",
-    "label": "Skeleton Package",
+    "label": "Skeleton",
     "dependencies": [
         {
             "type": "service",
             "name": "http",
-            "version": "v1.6.3",
-            "instanceId": "shared"
+            "version": "v1.8.0"
         },
         {
             "type": "package",
