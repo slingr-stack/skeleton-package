@@ -16,6 +16,12 @@
     "configurationBuilder": "/configurationBuilder.js",
     "configuration": [
         {
+            "name": "hi",
+            "label": "SI LEES ESTO, DECI HOLA EN EL CHAT.",
+            "type": "label",
+            "value": "info"
+        },
+        {
             "name": "SKELETON_API_BASE_URL",
             "label": "Skeleton Api Url",
             "type": "label",
