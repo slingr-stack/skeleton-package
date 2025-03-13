@@ -1,7 +1,6 @@
 /****************************************************
  Dependencies
  ****************************************************/
-// testing demo
 let httpReference = dependencies.http;
 
 let httpDependency = {
