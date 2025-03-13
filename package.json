@@ -357,58 +357,6 @@
             "typeOptions": {
                 "fields":[
                     {
-                        "label": "Many",
-                        "name": "manyNested",
-                        "type": "fieldsGroup",
-                        "multiplicity": "many",
-                        "typeOptions": {
-                            "fields":[
-                                {
-                                    "label": "Toggle",
-                                    "name": "toggle",
-                                    "type": "toggle"
-                                },
-                                {
-                                    "label": "Zip",
-                                    "name": "zip",
-                                    "type": "text",
-                                    "defaultValue": "1234",
-                                    "required": false,
-                                    "typeOptions": {
-                                        "validation": "number"
-                                    }
-                                },
-                                {
-                                    "label": "Nested Filters",
-                                    "name": "nestedFilters",
-                                    "type": "entityFilters",
-                                    "typeOptions": {
-                                        "entity": "@config.entity"
-                                    }
-                                },
-                                {
-                                    "label": "Nested Events",
-                                    "name": "nestedEvents",
-                                    "type": "entityEvents",
-                                    "typeOptions": {
-                                        "entity": "@config.entity"
-                                    }
-                                },
-                                {
-                                    "label": "Script",
-                                    "name": "actionScript",
-                                    "type": "script"
-                                },
-                                {
-                                    "label": "Multi scripts",
-                                    "name": "actionScripts",
-                                    "type": "script",
-                                    "multiplicity": "many"
-                                }
-                            ]
-                        }
-                    },
-                    {
                         "label": "Set first nested zip code",
                         "name": "setNestedZip",
                         "type": "button",
