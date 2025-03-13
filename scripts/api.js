@@ -1,7 +1,6 @@
 /****************************************************
  Dependencies
  ****************************************************/
-
 let httpReference = dependencies.http;
 
 let httpDependency = {
@@ -168,69 +167,6 @@ exports.options = function(path, httpOptions, callbackData, callbacks) {
     return httpService.options(Skeleton(options), callbackData, callbacks);
 };
 
-exports.utils = {
-
-    /**
-     * Converts a given date to a timestamp.
-     *
-     * @param {number | string} params      - The date to be converted.
-     * @return {object}                     - An object containing the timestamp.
-     */
-    fromDateToTimestamp: function(params) {
-        if (!!params) {
-            return {timestamp: new Date(params).getTime()};
-        }
-        return null;
-    },
-
-    /**
-     * Converts a timestamp to a date object.
-     *
-     * @param {number} timestamp            - The timestamp to convert.
-     * @return {object}                     - The date object representing the timestamp.
-     */
-    fromTimestampToDate: function(timestamp) {
-        return new Date(timestamp);
-    },
-
-    /**
-     * Gets a configuration from the properties.
-     *
-     * @param {string} property             - The name of the property to get.
-     *                                          If it is empty, return the entire configuration object.
-     * @return {string}                     - The value of the property or the whole object as string.
-     */
-    getConfiguration: function (property) {
-        if (!property) {
-            sys.logs.debug('[skeleton] Get configuration');
-            return JSON.stringify(config.get());
-        }
-        sys.logs.debug('[skeleton] Get property: '+property);
-        return config.get(property);
-    },
-
-    /**
-     * Concatenates a path with a param query and its value.
-     *
-     * @param path                          - The path to concatenate.
-     * @param key                           - The name of the param.
-     * @param value                         - The value of the param.
-     * @returns {string}                    - The concatenated path without coding parameters.
-     */
-    concatQuery: function (path, key, value) {
-        return path + ((!path || path.indexOf('?') < 0) ? '?' : '&') + key + "=" + value;
-    },
-
-    /**
-     * Merges two JSON objects into a single object.
-     *
-     * @param {Object} json1 - The first JSON object to be merged.
-     * @param {Object} json2 - The second JSON object to be merged.
-     * @return {Object} - The merged JSON object.
-     */
-    mergeJSON: mergeJSON,
-};
-
 /****************************************************
  Private helpers
  ****************************************************/
@@ -267,15 +203,9 @@ let stringType = Function.prototype.call.bind(Object.prototype.toString)
  Configurator
  ****************************************************/
 
-// TODO This is for the uncommon case that you need to execute something when the app is redeployed or in the first call
-// TODO Remove this variable if you don't need it
-
-let init = true;
-
 // TODO Refactor the Skeleton function to your package name
 
 let Skeleton = function (options) {
-    if (init) { methodOnInit(); init= false; } // TODO Remove this line if you don't use the init variable
     options = options || {};
     options= setApiUri(options);
     options= setAuthorization(options);
@@ -319,26 +249,6 @@ function setAuthorization(options) { // TODO: Set the authorization method and v
     return options;
 }
 
-function methodOnInit(){
-    let refreshTokenResponse = httpService.post({
-        url: "https://example.com/",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: {"grant_type":"refresh_token","refresh_token" : config.get("refreshToken")},
-        authorization: {
-            type: "basic",
-            username: config.get("clientId"),
-            password: config.get("clientSecret")
-        }
-    });
-    sys.logs.debug('[skeleton] Refresh token response: ' + JSON.stringify(refreshTokenResponse));
-    // If you need to set a variable at application level, you can do it with _config.set (on redeploy its cleared)
-    _config.set("accessToken", refreshTokenResponse.access_token);
-    _config.set("refreshToken", refreshTokenResponse.refresh_token);
-}
-
 function mergeJSON (json1, json2) {
     const result = {};
     let key;
@@ -356,13 +266,14 @@ function mergeJSON (json1, json2) {
  ****************************************************/
 
 exports.callbackTest = function () {
-    log('test function arrived UI');
+    log('[skeleton] Test function arrived UI');
     sys.ui.sendMessage({
         scope: 'uiService:testUiService.testUiService',
         name: 'callbackTest',
         callbacks: {
             callbackTest: function (originalMessage, callbackData) {
-                sys.logs.info('callbackTest');
+                sys.logs.info('[skeleton] callbackTest');
+                sys.events.triggerEvent('skeleton:callback');
             }
         }
     });
