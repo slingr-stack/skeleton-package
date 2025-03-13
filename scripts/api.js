@@ -2,7 +2,7 @@
  Dependencies
  ****************************************************/
 let httpReference = dependencies.http;
-
+const
 let httpDependency = {
     get: httpReference.get,
     post: httpReference.post,
