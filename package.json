@@ -244,7 +244,7 @@
         },
         {
             "label": "Switchers",
-            "name": "switches",
+            "name": "switchers",
             "type": "label",
             "value": "switchers"
         },
@@ -309,7 +309,7 @@
             "name": "dropDown",
             "type": "dropDown",
             "multiplicity": "one",
-            "defaultValue": ["AZ", "CA"],
+            "defaultValue": "AZ",
             "typeOptions": {
                 "possibleValues":[
                     {
