@@ -151,83 +151,66 @@
         {
             "label": "Labels",
             "name": "labels",
-            "type": "fieldsGroup",
-            "typeOptions": {
-                "fields":[
-                    {
-                        "label": "Simple",
-                        "name": "simpleLabel",
-                        "type": "label",
-                        "value": "Sample Complex endpoint"
-                    },
-                    {
-                        "label": "Concatenation",
-                        "name": "concatenation",
-                        "type": "label",
-                        "value": "'Prefix ['+(config.entity ? config.entity : 'No entity') +'] > ['+(config.entityField ? config.entityField : 'No field')+'] > ['+(config.entityAction ? config.entityAction : 'No action')+']'"
-                    },
-                    {
-                        "label": "Multi",
-                        "name": "multiLabel",
-                        "type": "label",
-                        "multiplicity": "many",
-                        "value": [
-                            "config.entity ? config.entity : 'No entity'",
-                            "config.entityField ? config.entityField : 'No field'",
-                            "config.entityAction ? config.entityAction : 'No action'"
-                        ]
-                    }
-                ]
-            }
+            "type": "label",
+            "value": "labels"
+        },
+        {
+            "label": "Simple",
+            "name": "simpleLabel",
+            "type": "label",
+            "value": "Sample Complex endpoint"
+        },
+        {
+            "label": "Concatenation",
+            "name": "concatenation",
+            "type": "label",
+            "value": "'Prefix ['+(config.entity ? config.entity : 'No entity') +'] > ['+(config.entityField ? config.entityField : 'No field')+'] > ['+(config.entityAction ? config.entityAction : 'No action')+']'"
         },
         {
             "label": "Inputs",
             "name": "inputs",
-            "type": "fieldsGroup",
+            "type": "label",
+            "value": "inputs"
+        },
+        {
+            "label": "Email",
+            "name": "email",
+            "type": "text",
+            "required": false,
             "typeOptions": {
-                "fields":[
-                    {
-                        "label": "Email",
-                        "name": "email",
-                        "type": "text",
-                        "required": false,
-                        "typeOptions": {
-                            "validation": "email"
-                        }
-                    },
-                    {
-                        "label": "Password",
-                        "name": "password",
-                        "type": "password",
-                        "required": false
-                    },
-                    {
-                        "label": "Bool",
-                        "name": "boolean",
-                        "type": "toggle"
-                    },
-                    {
-                        "label": "Multi bools",
-                        "name": "boolean",
-                        "multiplicity": "many",
-                        "type": "toggle"
-                    },
-                    {
-                        "label": "Script",
-                        "name": "actionScript",
-                        "type": "script",
-                        "required": false
-                    },
-                    {
-                        "label": "Multi scripts",
-                        "name": "actionScripts",
-                        "type": "script",
-                        "multiplicity": "many",
-                        "typeOptions": {
-                            "parameters": ["foo", "bar"]
-                        }
-                    }
-                ]
+                "validation": "email"
+            }
+        },
+        {
+            "label": "Password",
+            "name": "password",
+            "type": "password",
+            "required": false
+        },
+        {
+            "label": "Bool",
+            "name": "boolean",
+            "type": "toggle"
+        },
+        {
+            "label": "Multi bools",
+            "name": "boolean",
+            "multiplicity": "many",
+            "type": "toggle"
+        },
+        {
+            "label": "Script",
+            "name": "actionScript",
+            "type": "script",
+            "required": false
+        },
+        {
+            "label": "Multi scripts",
+            "name": "actionScripts",
+            "type": "script",
+            "multiplicity": "many",
+            "typeOptions": {
+                "parameters": ["foo", "bar"]
             }
         },
         {
@@ -261,83 +244,56 @@
         },
         {
             "label": "Switchers",
-            "name": "switches",
-            "type": "fieldsGroup",
+            "name": "switchers",
+            "type": "label",
+            "value": "switchers"
+        },
+        {
+            "label": "Custom",
+            "name": "customSwitcher",
+            "type": "buttonsGroup",
+            "multiplicity": "one",
+            "required": false,
+            "defaultValue": "${TEST1}",
             "typeOptions": {
-                "fields":[
+                "allowCustom": true,
+                "possibleValues":[
                     {
-                        "label": "Custom",
-                        "name": "customSwitcher",
-                        "type": "buttonsGroup",
-                        "multiplicity": "one",
-                        "required": false,
-                        "defaultValue": "${TEST1}",
-                        "typeOptions": {
-                            "allowCustom": true,
-                            "possibleValues":[
-                                {
-                                    "label":"Danger",
-                                    "name":"danger"
-                                },
-                                {
-                                    "label":"Warning",
-                                    "name":"warn"
-                                },
-                                {
-                                    "label":"Information",
-                                    "name":"info"
-                                }
-                            ]
-                        }
+                        "label":"Danger",
+                        "name":"danger"
                     },
                     {
-                        "label": "Simple",
-                        "name": "switcher",
-                        "type": "buttonsGroup",
-                        "multiplicity": "one",
-                        "required": false,
-                        "defaultValue": "warn",
-                        "typeOptions": {
-                            "allowCustom": true,
-                            "possibleValues":[
-                                {
-                                    "label":"Danger",
-                                    "name":"danger"
-                                },
-                                {
-                                    "label":"Warning",
-                                    "name":"warn"
-                                },
-                                {
-                                    "label":"Information",
-                                    "name":"info"
-                                }
-                            ]
-                        }
+                        "label":"Warning",
+                        "name":"warn"
                     },
                     {
-                        "label": "Multi",
-                        "name": "multiSwitcher",
-                        "type": "buttonsGroup",
-                        "multiplicity": "many",
-                        "required": false,
-                        "defaultValue": ["danger", "info"],
-                        "typeOptions": {
-                            "possibleValues":[
-                                {
-                                    "label":"Danger",
-                                    "name":"danger"
-                                },
-                                {
-                                    "label":"Warning",
-                                    "name":"warn"
-                                },
-                                {
-                                    "label":"Information",
-                                    "name":"info"
-                                }
-                            ]
-                        }
+                        "label":"Information",
+                        "name":"info"
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Simple",
+            "name": "switcher",
+            "type": "buttonsGroup",
+            "multiplicity": "one",
+            "required": false,
+            "defaultValue": "warn",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues":[
+                    {
+                        "label":"Danger",
+                        "name":"danger"
+                    },
+                    {
+                        "label":"Warning",
+                        "name":"warn"
+                    },
+                    {
+                        "label":"Information",
+                        "name":"info"
                     }
                 ]
             }
@@ -345,101 +301,51 @@
         {
             "label": "Dropdowns",
             "name": "dropdowns",
-            "type": "fieldsGroup",
+            "type": "label",
+            "value": "dropdowns"
+        },
+        {
+            "label": "Simple",
+            "name": "dropDown",
+            "type": "dropDown",
+            "multiplicity": "one",
+            "defaultValue": "AZ",
             "typeOptions": {
-                "fields":[
+                "possibleValues":[
                     {
-                        "label": "Simple",
-                        "name": "dropDown",
-                        "type": "dropDown",
-                        "multiplicity": "one",
-                        "defaultValue": ["AZ", "CA"],
-                        "typeOptions": {
-                            "possibleValues":[
-                                {
-                                    "label":"New York",
-                                    "name":"NY"
-                                },
-                                {
-                                    "label":"Arizona",
-                                    "name":"AZ"
-                                },
-                                {
-                                    "label":"California",
-                                    "name":"CA"
-                                }
-                            ]
-                        }
+                        "label":"New York",
+                        "name":"NY"
                     },
                     {
-                        "label": "Simple",
-                        "name": "multiDropDown",
-                        "type": "dropDown",
-                        "multiplicity": "many",
-                        "defaultValue": ["AZ", "CA"],
-                        "typeOptions": {
-                            "possibleValues":[
-                                {
-                                    "label":"New York",
-                                    "name":"NY"
-                                },
-                                {
-                                    "label":"Arizona",
-                                    "name":"AZ"
-                                },
-                                {
-                                    "label":"California",
-                                    "name":"CA"
-                                }
-                            ]
-                        }
+                        "label":"Arizona",
+                        "name":"AZ"
                     },
                     {
-                        "label": "Custom",
-                        "name": "customDropDown",
-                        "type": "dropDown",
-                        "multiplicity": "one",
-                        "typeOptions": {
-                            "allowCustom": true,
-                            "possibleValues":[
-                                {
-                                    "label":"New York",
-                                    "name":"NY"
-                                },
-                                {
-                                    "label":"Arizona",
-                                    "name":"AZ"
-                                },
-                                {
-                                    "label":"California",
-                                    "name":"CA"
-                                }
-                            ]
-                        }
+                        "label":"California",
+                        "name":"CA"
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Custom",
+            "name": "customDropDown",
+            "type": "dropDown",
+            "multiplicity": "one",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues":[
+                    {
+                        "label":"New York",
+                        "name":"NY"
                     },
                     {
-                        "label": "Multi Custom",
-                        "name": "multiCustomDropDown",
-                        "type": "dropDown",
-                        "multiplicity": "many",
-                        "defaultValue": ["${TEST2}", "CA"],
-                        "typeOptions": {
-                            "allowCustom": true,
-                            "possibleValues":[
-                                {
-                                    "label":"New York",
-                                    "name":"NY"
-                                },
-                                {
-                                    "label":"Arizona",
-                                    "name":"AZ"
-                                },
-                                {
-                                    "label":"California",
-                                    "name":"CA"
-                                }
-                            ]
-                        }
+                        "label":"Arizona",
+                        "name":"AZ"
+                    },
+                    {
+                        "label":"California",
+                        "name":"CA"
                     }
                 ]
             }
@@ -450,58 +356,6 @@
             "type": "fieldsGroup",
             "typeOptions": {
                 "fields":[
-                    {
-                        "label": "Many",
-                        "name": "manyNested",
-                        "type": "fieldsGroup",
-                        "multiplicity": "many",
-                        "typeOptions": {
-                            "fields":[
-                                {
-                                    "label": "Toggle",
-                                    "name": "toggle",
-                                    "type": "toggle"
-                                },
-                                {
-                                    "label": "Zip",
-                                    "name": "zip",
-                                    "type": "text",
-                                    "defaultValue": "1234",
-                                    "required": false,
-                                    "typeOptions": {
-                                        "validation": "number"
-                                    }
-                                },
-                                {
-                                    "label": "Nested Filters",
-                                    "name": "nestedFilters",
-                                    "type": "entityFilters",
-                                    "typeOptions": {
-                                        "entity": "@config.entity"
-                                    }
-                                },
-                                {
-                                    "label": "Nested Events",
-                                    "name": "nestedEvents",
-                                    "type": "entityEvents",
-                                    "typeOptions": {
-                                        "entity": "@config.entity"
-                                    }
-                                },
-                                {
-                                    "label": "Script",
-                                    "name": "actionScript",
-                                    "type": "script"
-                                },
-                                {
-                                    "label": "Multi scripts",
-                                    "name": "actionScripts",
-                                    "type": "script",
-                                    "multiplicity": "many"
-                                }
-                            ]
-                        }
-                    },
                     {
                         "label": "Set first nested zip code",
                         "name": "setNestedZip",
@@ -527,77 +381,74 @@
         },
         {
             "label": "Entities",
-            "name": "widgets",
-            "type": "fieldsGroup",
+            "name": "entities",
+            "type": "label",
+            "value": "entities"
+        },
+        {
+            "label": "Set Contacts entity",
+            "name": "setEntity",
+            "type": "button",
             "typeOptions": {
-                "fields":[
-                    {
-                        "label": "Set Contacts entity",
-                        "name": "setEntity",
-                        "type": "button",
-                        "typeOptions": {
-                            "color": "warning",
-                            "icon": "zmdi zmdi-check",
-                            "action": "if (!config.entity) { config.entity = 'contacts'; }"
-                        }
-                    },
-                    {
-                        "label": "Clear entity",
-                        "name": "clearEntity",
-                        "type": "button",
-                        "typeOptions": {
-                            "color": "danger",
-                            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvID_hN1G47XcpvLkcOYfli4slxtLLTiK2LwnqRnfoXTeCUmv",
-                            "action": "config.entity=null;"
-                        }
-                    },
-                    {
-                        "label": "Action - Contacts",
-                        "name": "entityAction2",
-                        "type": "entityAction",
-                        "visibility": "@config.entity=='contacts'",
-                        "required": "config.entity=='contacts'",
-                        "typeOptions": {
-                            "entity": "@config.entity"
-                        }
-                    },
-                    {
-                        "label": "Action - Address State",
-                        "name": "entityAction3",
-                        "type": "entityAction",
-                        "visibility": "config.entityField=='address.state'",
-                        "typeOptions": {
-                            "entity": "@config.entity"
-                        }
-                    },
-                    {
-                        "label": "Filters",
-                        "name": "entityFilters",
-                        "type": "entityFilters",
-                        "typeOptions": {
-                            "entity": "@config.entity"
-                        }
-                    },
-                    {
-                        "label": "Events",
-                        "name": "entityEvents",
-                        "type": "entityEvents",
-                        "typeOptions": {
-                            "entity": "@config.entity"
-                        }
-                    },
-                    {
-                        "label": "User or long text",
-                        "name": "userOrChoice",
-                        "type": "entityField",
-                        "showLabel": false,
-                        "visibility": "@config.entity",
-                        "typeOptions": {
-                            "entity": "@config.entity",
-                            "filterTypes": ["user", "choice"]
-                        }
-                    }
-                ]
+                "color": "warning",
+                "icon": "zmdi zmdi-check",
+                "action": "if (!config.entity) { config.entity = 'contacts'; }"
+            }
+        },
+        {
+            "label": "Clear entity",
+            "name": "clearEntity",
+            "type": "button",
+            "typeOptions": {
+                "color": "danger",
+                "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAvID_hN1G47XcpvLkcOYfli4slxtLLTiK2LwnqRnfoXTeCUmv",
+                "action": "config.entity=null;"
+            }
+        },
+        {
+            "label": "Action - Contacts",
+            "name": "entityAction2",
+            "type": "entityAction",
+            "visibility": "@config.entity=='contacts'",
+            "required": "config.entity=='contacts'",
+            "typeOptions": {
+                "entity": "@config.entity"
+            }
+        },
+        {
+            "label": "Action - Address State",
+            "name": "entityAction3",
+            "type": "entityAction",
+            "visibility": "config.entityField=='address.state'",
+            "typeOptions": {
+                "entity": "@config.entity"
+            }
+        },
+        {
+            "label": "Filters",
+            "name": "entityFilters",
+            "type": "entityFilters",
+            "typeOptions": {
+                "entity": "@config.entity"
+            }
+        },
+        {
+            "label": "Events",
+            "name": "entityEvents",
+            "type": "entityEvents",
+            "typeOptions": {
+                "entity": "@config.entity"
+            }
+        },
+        {
+            "label": "User or long text",
+            "name": "userOrChoice",
+            "type": "entityField",
+            "showLabel": false,
+            "visibility": "@config.entity",
+            "typeOptions": {
+                "entity": "@config.entity",
+                "filterTypes": ["user", "choice"]
             }
         },
         {
